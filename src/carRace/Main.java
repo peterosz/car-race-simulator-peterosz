@@ -7,7 +7,7 @@ public class Main {
     public static Random random = new Random();
 
 
-    public static boolean isRaining(){ //30% chance of rain every hour
+    public static boolean isRaining(){ //30% chance of rain every hour PLUS im using this for the cars 30% of speedlimit too :)
         int rainChance = random.nextInt(100);
         if (rainChance <= 30){
             return true;
@@ -36,7 +36,7 @@ public class Main {
         return vehicles;
     }
 
-    public static Vehicle[] simulateRace(Vehicle[] vehicles){
+    private static Vehicle[] simulateRace(Vehicle[] vehicles){
         for (int hours = 1; hours <= 50; hours++){
             for (int i = 0; i < 30; i++) {
                 vehicles[i].moveForAnHour(isRaining());
@@ -45,7 +45,7 @@ public class Main {
         return vehicles;
     }
 
-    public static void printRaceResults(Vehicle[] vehicles){
+    private static void printRaceResults(Vehicle[] vehicles){
         int winner = 0;
         int temp = 0;
         for (int i = 0; i < 30; i++){
