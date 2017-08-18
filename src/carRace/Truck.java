@@ -1,9 +1,27 @@
 package carRace;
 
 public class Truck extends Vehicle{
-    /*// speed: 100km/h. 5% chance of breaking down for 2 hours.
-    // Truck drivers are boring. They call all their trucks a random number between 0 and 1000.
-    breakdownTurnsLeft // holds how long its still broken down.
-    distanceTraveled
-    moveForAnHour()*/
+
+    public Truck(){
+        type = "truck";
+        name = randomNumber.toString();
+        normalSpeed = 100;
+    }
+
+    Integer randomNumber = Main.random.nextInt(1000);
+    int breakdownTurnsLeft;
+
+    @Override
+    public void moveForAnHour(boolean raining) {
+        if (breakdownTurnsLeft != 0){
+            normalSpeed = 0;
+            breakdownTurnsLeft--;
+        }
+        else if (breakdownTurnsLeft == 0){
+            normalSpeed = 100;
+            int breakdown = Main.random.nextInt(101);
+            if (breakdown <= 5) breakdownTurnsLeft = 2;
+        }
+        distanceTraveled += normalSpeed;
+    }
 }

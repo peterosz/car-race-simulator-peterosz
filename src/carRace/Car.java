@@ -18,8 +18,8 @@ public class Car extends Vehicle{
         List<String> possibilities = new ArrayList(Arrays.asList("Bullet", "Icon", "Formula", "Behemoth",
                 "Deputy", "Essence", "Raven", "Portrait", "Triumph", "Hydra", "Twister", "Spire", "Daydream", "Whim",
                 "Sanctuary", "Lightning", "Temperament", "Tarragon", "Wolf", "Empire", "Dynamics",
-                "Marvel", "Dawn", "Union", "Spirit", "Inferno", "Patron", "Thriller", "Encounter", "Ivory",
-                "Magic", "Lioness", "Dusk", "Millenium", "Intro"));
+                "Marvel", "Dawn", "Unicorn", "Spirit", "Inferno", "Patron", "Thriller", "Encounter", "Ivory",
+                "Magic", "Lioness", "Dusk", "Millenium", "Rainbow"));
         int listLength = possibilities.size();
         String name = possibilities.get(Main.random.nextInt(listLength)) + " "
                     + possibilities.get(Main.random.nextInt(listLength));
@@ -28,7 +28,11 @@ public class Car extends Vehicle{
 
     @Override
     public void moveForAnHour(boolean raining) { // Since cars are so fast there is a 30% chance that they can go only with 70km/h speed.
-        if (raining) normalSpeed = 70;
+        if (raining){
+            normalSpeed = 70;
+        } else {
+            normalSpeed = Main.random.nextInt(31)+80;
+        }
         distanceTraveled += normalSpeed;
     }
 }
