@@ -5,7 +5,6 @@ public class Truck extends Vehicle{
     public Truck(){
         type = "truck";
         name = randomNumber.toString();
-        normalSpeed = 100;
     }
 
     Integer randomNumber = Main.random.nextInt(1000);

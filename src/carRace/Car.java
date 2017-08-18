@@ -9,7 +9,6 @@ public class Car extends Vehicle{
     public Car(){
         type = "car";
         name = createCarName();
-        normalSpeed = Main.random.nextInt(31)+80;
     }
 
 
