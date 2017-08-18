@@ -4,9 +4,9 @@ public class Vehicle {
     public String name;
     int distanceTraveled;
     String type;
-    static int normalSpeed;
+    int normalSpeed;
 
-    public void moveForAnHour(){
+    public void moveForAnHour(boolean raining){
     }
 
     public String getType(){

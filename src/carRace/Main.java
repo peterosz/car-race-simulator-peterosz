@@ -15,18 +15,31 @@ public class Main {
         return false;
     }
 
-    public static boolean limit = isRaining(); // Since cars are so fast there is a 30% chance that they can go only with 70km/h speed.
-
 
     public static void main(String[] args) {
         Vehicle newCar = new Car();
-        Car.setSpeedLimit(limit);
         System.out.println(newCar.name);
         System.out.println(newCar.normalSpeed);
         System.out.println(newCar.getType());
         newCar.moveForAnHour(isRaining());
-        newCar.moveForAnHour(isRaining());
         System.out.println(newCar.getDistanceTraveled());
+
+        Vehicle newCar2 = new Car();
+        System.out.println(newCar2.name);
+        System.out.println(newCar2.normalSpeed);
+        System.out.println(newCar2.getType());
+        newCar2.moveForAnHour(isRaining());
+        System.out.println(newCar2.getDistanceTraveled());
+
+        Vehicle newMotor = new Motorcycle();
+        System.out.println(newMotor.name);
+        Vehicle newMotor2 = new Motorcycle();
+        newMotor.moveForAnHour(isRaining());
+        newMotor2.moveForAnHour(isRaining());
+        System.out.println(newMotor.getDistanceTraveled());
+        System.out.println(newMotor2.name);
+        System.out.println(newMotor2.getDistanceTraveled());
+
 
         /*
         createVehicles() // creates 10 cars, 10 trucks and 10 motorcycles

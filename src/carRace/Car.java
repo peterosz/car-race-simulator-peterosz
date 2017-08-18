@@ -6,18 +6,12 @@ import java.util.List;
 
 public class Car extends Vehicle{
 
-    // holds the current distance traveled.
-
     public Car(){
         type = "car";
         name = createCarName();
-        normalSpeed = Main.random.nextInt(30)+80;
+        normalSpeed = Main.random.nextInt(31)+80;
     }
-    public static void setSpeedLimit(boolean limit){
-        if (limit) {
-            Car.normalSpeed = 70;
-        }
-    }
+
 
     public static String createCarName(){
 
@@ -33,7 +27,8 @@ public class Car extends Vehicle{
     }
 
     @Override
-    public void moveForAnHour() { // The vehicle travels for an hour. It increases the distance traveled. Call this from the main class only!
+    public void moveForAnHour(boolean raining) { // Since cars are so fast there is a 30% chance that they can go only with 70km/h speed.
+        if (raining) normalSpeed = 70;
         distanceTraveled += normalSpeed;
     }
 }
